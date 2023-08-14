@@ -162,7 +162,6 @@ function ThreadCard({
             />
         </Link>
       )} 
-      <h1>kmlfkkklmre</h1>
     </article>
   );
 }
