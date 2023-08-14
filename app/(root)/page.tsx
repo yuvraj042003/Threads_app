@@ -3,7 +3,9 @@ import ThreadCard from "@/components/cards/ThreadsCard";
 import { redirect } from "next/navigation";
 import { fetchPosts } from "@/lib/actions/thread.action";
 import { fetchUser } from "@/lib/actions/user.action";
-import { currentUser } from "@clerk/nextjs";
+import { SignIn, currentUser } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
 async function Home({
@@ -12,7 +14,13 @@ async function Home({
   searchParams: { [key: string]: string | undefined };
 }) {
   const user = await currentUser();
-  if (!user) return null;
+  if (!user) return (<div className="text-center ">
+    <p className="text-white text-8xl my-8">Please Login to continue</p>
+    <Button asChild>
+  <Link href="/sign-in">Login</Link>
+</Button>
+
+  </div>);
 
   const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
