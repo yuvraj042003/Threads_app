@@ -11,7 +11,7 @@ async function onboarding() {
   if (userInfo?.onboarded) redirect("/");
 
   const userData = {
-    id: user?.id || "", // Use optional chaining and provide a default value
+    id: user ? user.id : "", // Use optional chaining and provide a default value
     objectId: userInfo?._id || "",
     username: userInfo?.username || user?.username || "", // Use nested null check
     name: userInfo?.name || user?.firstName || "", // Use nested null check
