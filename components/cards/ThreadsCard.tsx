@@ -122,7 +122,6 @@ function ThreadCard({
           isComment={isComment}
         /> */}
       </div>
-
       {!isComment && comments.length > 0 && (
         <div className='ml-1 mt-3 flex items-center gap-2'>
           {comments.slice(0, 2).map((comment, index) => (
@@ -148,7 +147,7 @@ function ThreadCard({
         <Link
           href={`/communities/${community.id}`}
           className='mt-5 flex items-center'
-        >
+          >
           <p className='text-subtle-medium text-gray-1'>
             {formatDateString(createdAt)}
             {community && ` - ${community.name} Community`}
@@ -160,9 +159,10 @@ function ThreadCard({
             width={14}
             height={14}
             className='ml-1 rounded-full object-cover'
-          />
+            />
         </Link>
       )} 
+      <h1>kmlfkkklmre</h1>
     </article>
   );
 }
