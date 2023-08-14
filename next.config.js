@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
+  typescript: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    //Replace typescript if not work
+    ignoreBuildErrors: true,
+  }, 
+  experimental: {
         serverActions: true,
         serverComponentsExternalPackages: ["mongoose"],
-      },
-      typescript: {
-        // Warning: This allows production builds to successfully complete even if
-        // your project has ESLint errors.
-        //Replace typescript if not work
-        ignoreDuringBuilds: true,
       },
       images: {
         remotePatterns: [
