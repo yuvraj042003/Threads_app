@@ -1,5 +1,5 @@
 "use client";
-
+import { Button } from "../ui/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -34,7 +34,7 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
         </div>
       </div>
 
-      <button
+      <Button
         className="user-card_btn"
         onClick={() => {
           if (isCommunity) {
@@ -45,7 +45,7 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
         }}
       >
         View
-      </button>
+      </Button>
     </article>
   );
 }

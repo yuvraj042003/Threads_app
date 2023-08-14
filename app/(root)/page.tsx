@@ -1,5 +1,5 @@
 import ThreadCard from "@/components/cards/ThreadsCard";
-//mport Pagination from "@/components/shared/Pagination";
+import Pagination from "@/components/shared/Pagination";
 import { redirect } from "next/navigation";
 import { fetchPosts } from "@/lib/actions/thread.action";
 import { fetchUser } from "@/lib/actions/user.action";
@@ -55,11 +55,11 @@ async function Home({
         )}
       </section>
 
-      {/* <Pagination
+      <Pagination
         path='/'
         pageNumber={searchParams?.page ? +searchParams.page : 1}
         isNext={result.isNext}
-      /> */}
+      />
     </>
   );
 }
